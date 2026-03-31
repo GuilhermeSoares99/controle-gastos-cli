@@ -1,5 +1,6 @@
 from gastos import adicionar_gasto, listar_gastos, total_gastos
 
+
 def menu():
     while True:
         print("\n1 - Adicionar gasto")
@@ -18,6 +19,7 @@ def menu():
             print("Total:", total_gastos())
         elif op == "0":
             break
+
 
 if __name__ == "__main__":
     menu()
