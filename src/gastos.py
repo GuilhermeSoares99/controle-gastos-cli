@@ -30,3 +30,10 @@ def listar_gastos():
 
 def total_gastos():
     return sum(carregar())
+
+from src.api import get_dolar
+
+def total_em_dolar():
+    total = sum(carregar())
+    dolar = get_dolar()
+    return total * dolar
