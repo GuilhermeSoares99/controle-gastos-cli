@@ -46,6 +46,17 @@ if __name__ == "__main__":
         else:
             print("Aviso: Não foi possível carregar a cotação.")
         print("Build finalizado com sucesso!")
+        
+        # --- SERVIDOR HTTP FALSO PARA MANTER O RENDER ATIVO ---
+        import http.server
+        import socketserver
+        
+        PORT = int(os.environ.get("PORT", 10000))
+        Handler = http.server.SimpleHTTPRequestHandler
+        
+        print(f"Iniciando servidor web fake na porta {PORT} para manter o deploy ativo...")
+        with socketserver.TCPServer(("", PORT), Handler) as httpd:
+            httpd.serve_forever()
     else:
-        # Se for no seu computador, roda o menu interativo normal
+        # Se for no seu computador, roda o menu interativo normal com input
         menu()
