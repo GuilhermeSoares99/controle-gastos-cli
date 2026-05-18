@@ -1,3 +1,4 @@
+import os
 from gastos import adicionar_gasto, listar_gastos, total_gastos
 from cotacao import obter_cotacao_dolar
 
@@ -35,4 +36,16 @@ def menu():
 
 
 if __name__ == "__main__":
-    menu()
+    # Verifica se o código está rodando no servidor do Render
+    if os.environ.get("RENDER"):
+        print("--- Rodando no Render (Deploy Automatizado) ---")
+        print("Testando integração com a API de cotação:")
+        cotacao = obter_cotacao_dolar()
+        if cotacao:
+            print(f"Cotação do dólar carregada com sucesso: R$ {cotacao:.2f}")
+        else:
+            print("Aviso: Não foi possível carregar a cotação.")
+        print("Build finalizado com sucesso!")
+    else:
+        # Se for no seu computador, roda o menu interativo normal
+        menu()
