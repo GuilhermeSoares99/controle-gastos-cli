@@ -1,4 +1,7 @@
-# 💰 Controle de Gastos CLI
+# 💰 # Controle de Gastos CLI
+
+## Nova funcionalidade
+- Cotação do dólar em tempo real usando API pública
 
 ![CI](https://img.shields.io/badge/build-passing-brightgreen)
 
