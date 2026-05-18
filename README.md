@@ -1,5 +1,8 @@
 # 💰 # Controle de Gastos CLI
 
+## Deploy
+https://controle-gastos-cli.onrender.com
+
 ## Nova funcionalidade
 - Cotação do dólar em tempo real usando API pública
 
