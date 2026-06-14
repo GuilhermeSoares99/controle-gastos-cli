@@ -1,12 +1,7 @@
 # 💰 # Controle de Gastos CLI
 
-## Lucas Queiroz 22511479 e Guilherme Guimarães 22506956.
-
 ## Deploy
 https://controle-gastos-cli.onrender.com
-
-## Atualização
-- O projeto agora usa Supabase (PostgreSQL) como banco de dados.
 
 ## Nova funcionalidade
 - Cotação do dólar em tempo real usando API pública
