@@ -3,3 +3,4 @@ flake8
 requests
 supabase
 python-dotenv
+django-dotenv
