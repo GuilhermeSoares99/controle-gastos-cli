@@ -18,7 +18,10 @@ def menu():
             adicionar_gasto(valor)
 
         elif op == "2":
-            print(listar_gastos())
+    gastos = listar_gastos()
+
+    for gasto in gastos:
+        print(f"ID: {gasto['id']} | Valor: R$ {gasto['valor']}")
 
         elif op == "3":
             print("Total:", total_gastos())

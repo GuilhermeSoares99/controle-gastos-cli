@@ -1,32 +1,32 @@
-import json
-import os
-
-FILE = "gastos.json"
-
-
-def carregar():
-    if not os.path.exists(FILE):
-        return []
-    with open(FILE, "r") as f:
-        return json.load(f)
-
-
-def salvar(gastos):
-    with open(FILE, "w") as f:
-        json.dump(gastos, f)
+from database import supabase
 
 
 def adicionar_gasto(valor):
     if valor < 0:
         raise ValueError("Valor não pode ser negativo")
-    gastos = carregar()
-    gastos.append(valor)
-    salvar(gastos)
+
+    supabase.table("gastos").insert({
+        "valor": valor
+    }).execute()
 
 
 def listar_gastos():
-    return carregar()
+    resposta = (
+        supabase
+        .table("gastos")
+        .select("*")
+        .execute()
+    )
+
+    return resposta.data
 
 
 def total_gastos():
-    return sum(carregar())
+    resposta = (
+        supabase
+        .table("gastos")
+        .select("valor")
+        .execute()
+    )
+
+    return sum(item["valor"] for item in resposta.data)
