@@ -2,4 +2,4 @@ pytest
 flake8
 requests
 supabase
-python-dotenvgit
+python-dotenv
