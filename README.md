@@ -3,6 +3,8 @@
 ## Deploy
 https://controle-gastos-cli.onrender.com
 
+## Lucas Queiroz e Guilherme Guimarães
+
 ## Nova funcionalidade
 - Cotação do dólar em tempo real usando API pública
 
@@ -54,5 +56,6 @@ flake8 src
 ## 📦 Versão
 1.0.0
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 Guilherme Guimarães Soares
+Lucas Queiroz Costa
